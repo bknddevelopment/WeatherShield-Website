@@ -67,9 +67,6 @@ jobs:
           echo "Checking if .nojekyll exists:"
           ls -la out/.nojekyll
         
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
