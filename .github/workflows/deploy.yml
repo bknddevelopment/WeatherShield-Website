@@ -54,14 +54,18 @@ jobs:
           # Create .nojekyll file to prevent GitHub Pages from ignoring _next
           touch out/.nojekyll
           
-          # Fix asset paths for GitHub Pages
-          node scripts/fix-asset-paths.js
+          # Fix asset paths directly with sed
+          find out -name "*.html" -exec sed -i 's|href="/_next|href="/WeatherShield-Website/_next|g' {} \;
+          find out -name "*.html" -exec sed -i 's|src="/_next|src="/WeatherShield-Website/_next|g' {} \;
+          find out -name "*.html" -exec sed -i 's|srcSet="/_next|srcSet="/WeatherShield-Website/_next|g' {} \;
+          find out -name "*.html" -exec sed -i 's|href="/|href="/WeatherShield-Website/|g' {} \;
+          find out -name "*.html" -exec sed -i 's|href="/WeatherShield-Website/WeatherShield-Website|href="/WeatherShield-Website|g' {} \;
           
           # Debug: List contents
           echo "Contents of out directory:"
           ls -la out/
-          echo "Checking paths in index.html:"
-          grep -o 'href="/WeatherShield-Website/_next' out/index.html | head -3 || echo "Paths not found"
+          echo "Checking if .nojekyll exists:"
+          ls -la out/.nojekyll
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
