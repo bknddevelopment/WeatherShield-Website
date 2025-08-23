@@ -50,12 +50,12 @@ export default function ReviewsPage() {
   
   // Get unique services and platforms for filters
   const services = useMemo(() => {
-    const uniqueServices = [...new Set(reviewsData.map(r => r.service))]
+    const uniqueServices = Array.from(new Set(reviewsData.map(r => r.service)))
     return uniqueServices.sort()
   }, [])
   
   const platforms = useMemo(() => {
-    const uniquePlatforms = [...new Set(reviewsData.map(r => r.platform))]
+    const uniquePlatforms = Array.from(new Set(reviewsData.map(r => r.platform)))
     return uniquePlatforms.sort()
   }, [])
 
@@ -70,7 +70,7 @@ export default function ReviewsPage() {
     
     // Apply rating filter
     if (filters.rating !== null) {
-      filtered = filtered.filter(r => r.rating >= filters.rating)
+      filtered = filtered.filter(r => r.rating >= filters.rating!)
     }
     
     // Apply platform filter
