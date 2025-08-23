@@ -1,6 +1,6 @@
 export default function myImageLoader({ src, width, quality }) {
   // For production on GitHub Pages, use direct image paths
-  if (process.env.NODE_ENV === 'production') {
+  if (typeof window !== 'undefined' && window.location.hostname.includes('github.io')) {
     // If src already starts with http, return as is
     if (src.startsWith('http')) {
       return src;
