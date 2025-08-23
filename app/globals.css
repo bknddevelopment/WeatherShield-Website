@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&family=Merriweather:wght@300;400;700&family=Oswald:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Navy Blue Palette */
+    --weather-navy: 0, 86, 179;
+    --weather-navy-dark: 0, 70, 143;
+    --weather-navy-light: 51, 122, 204;
+    
+    /* Accent Amber Gold Palette */
+    --weather-amber: 245, 158, 11;
+    --weather-amber-dark: 217, 119, 6;
+    --weather-amber-light: 251, 191, 36;
+    
+    /* Neutral Colors */
+    --weather-dark: 31, 41, 55;
+    --weather-gray: 229, 231, 235;
+    --weather-light: 248, 250, 252;
+    --weather-white: 255, 255, 255;
+    --weather-black: 15, 23, 42;
+    
+    /* Status Colors */
+    --weather-success: 34, 197, 94;
+    --weather-warning: 245, 158, 11;
+    --weather-danger: 239, 68, 68;
+    
+    /* Legacy colors for backwards compatibility */
+    --weather-teal: 0, 86, 179;
+    --weather-purple: 245, 158, 11;
+  }
+
+  body {
+    @apply bg-white text-gray-700;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-family: 'Bebas Neue', 'Oswald', system-ui, sans-serif;
+  }
+  
+  .testimonial-text {
+    font-family: 'Merriweather', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white 
+           border border-transparent rounded-lg shadow-lg 
+           hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-offset-2 
+           transition-all duration-300;
+    background: linear-gradient(135deg, rgb(245, 158, 11), rgb(217, 119, 6));
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11));
+  }
+  .btn-primary:focus {
+    --tw-ring-color: rgb(245, 158, 11);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold 
+           bg-white border-2 rounded-lg shadow-md
+           hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-4 
+           focus:ring-offset-2 transition-all duration-300;
+    color: rgb(0, 86, 179);
+    border-color: rgb(0, 86, 179);
+  }
+  .btn-secondary:hover {
+    background-color: rgb(0, 86, 179);
+    @apply text-white;
+  }
+  .btn-secondary:focus {
+    --tw-ring-color: rgb(0, 86, 179);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white 
+           border border-transparent rounded-lg shadow-lg 
+           hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-offset-2 
+           transition-all duration-300;
+    background-color: rgb(0, 86, 179);
+  }
+  .btn-accent:hover {
+    background-color: rgb(0, 70, 143);
+  }
+  .btn-accent:focus {
+    --tw-ring-color: rgb(0, 86, 179);
+  }
+
+  .btn-emergency {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white 
+           bg-red-500 border-2 border-red-500 rounded-md shadow-lg 
+           hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-red-500 
+           focus:ring-opacity-50 transition-all duration-200 animate-pulse-slow;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-navy-amber {
+    background: linear-gradient(135deg, rgb(0, 86, 179), rgb(245, 158, 11));
+  }
+
+  .gradient-amber-navy {
+    background: linear-gradient(135deg, rgb(245, 158, 11), rgb(0, 86, 179));
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent font-bold;
+    background: linear-gradient(135deg, rgb(0, 86, 179), rgb(245, 158, 11));
+  }
+  
+  /* Legacy gradient names for compatibility */
+  .gradient-teal-purple {
+    background: linear-gradient(135deg, rgb(0, 86, 179), rgb(245, 158, 11));
+  }
+
+  .gradient-purple-teal {
+    background: linear-gradient(135deg, rgb(245, 158, 11), rgb(0, 86, 179));
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-soft p-6 hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium rounded-full;
+  }
+
+  .badge-navy {
+    @apply bg-opacity-10;
+    background-color: rgba(0, 86, 179, 0.1);
+    color: rgb(0, 86, 179);
+  }
+
+  .badge-amber {
+    @apply bg-opacity-10;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: rgb(245, 158, 11);
+  }
+  
+  /* Legacy badge names for compatibility */
+  .badge-teal {
+    @apply bg-opacity-10;
+    background-color: rgba(0, 86, 179, 0.1);
+    color: rgb(0, 86, 179);
+  }
+
+  .badge-purple {
+    @apply bg-opacity-10;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: rgb(245, 158, 11);
+  }
+
+  .input-field {
+    @apply block w-full px-4 py-3 text-base border border-gray-300 rounded-md 
+           focus:ring-2 transition-colors duration-200;
+  }
+  .input-field:focus {
+    border-color: rgb(0, 86, 179);
+    --tw-ring-color: rgb(0, 86, 179);
+  }
+
+  .service-card {
+    @apply relative overflow-hidden bg-white rounded-lg shadow-soft p-6 
+           hover:shadow-xl transition-all duration-300 group;
+  }
+
+  .service-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300;
+    background: linear-gradient(135deg, rgb(0, 86, 179), rgb(245, 158, 11));
+  }
+
+  .location-card {
+    @apply bg-white rounded-lg border-2 border-gray-200 p-4 
+           transition-colors duration-200;
+  }
+  .location-card:hover {
+    border-color: rgb(0, 86, 179);
+  }
+
+  .testimonial-card {
+    @apply bg-gray-50 rounded-lg p-6 relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    @apply absolute top-2 left-4 text-6xl opacity-20;
+    font-family: 'Merriweather', Georgia, serif;
+    color: rgb(0, 86, 179);
+  }
+
+  .nav-link {
+    @apply text-gray-700 transition-colors duration-200 font-medium;
+  }
+  .nav-link:hover {
+    color: rgb(0, 86, 179);
+  }
+
+  .nav-link-active {
+    @apply font-semibold;
+    color: rgb(0, 86, 179);
+  }
+
+  .footer-link {
+    @apply text-gray-400 hover:text-white transition-colors duration-200;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-black/80 to-black/50;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-gray-700 mb-8;
+  }
+
+  .divider {
+    @apply w-24 h-1 mx-auto my-8 rounded-full;
+    background: linear-gradient(135deg, rgb(0, 86, 179), rgb(245, 158, 11));
+  }
+
+  .icon-wrapper {
+    @apply w-12 h-12 flex items-center justify-center rounded-full;
+    background-color: rgba(0, 86, 179, 0.1);
+    color: rgb(0, 86, 179);
+  }
+
+  .icon-wrapper-lg {
+    @apply w-16 h-16 flex items-center justify-center rounded-full;
+    background-color: rgba(0, 86, 179, 0.1);
+    color: rgb(0, 86, 179);
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230056B3' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-grow {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .focus-ring:focus {
+    --tw-ring-color: rgb(0, 86, 179);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
