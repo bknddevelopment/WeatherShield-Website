@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import StaticImage from './StaticImage';
 import { useRef } from 'react';
 import { 
   Shield, 
@@ -86,7 +87,7 @@ export default function HeroSection({
         animate={{ opacity: 0.1, scale: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        <Image
+        <StaticImage
           src="/images/logo/weather_shield_roofing_transparent.png"
           alt=""
           width={400}

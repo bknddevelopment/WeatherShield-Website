@@ -6,11 +6,10 @@ const nextConfig = {
   assetPrefix: isProd ? '/WeatherShield-Website' : '',
   images: {
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './imageLoader.js',
   },
   trailingSlash: true,
   reactStrictMode: true,
   swcMinify: true,
-  distDir: '.next',
 }
+
+module.exports = nextConfig

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import StaticImage from './StaticImage';
 import { 
   Phone, 
   Mail, 
@@ -51,7 +52,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <Image
+              <StaticImage
                 src="/images/logo/weather_shield_roofing_transparent.png"
                 alt="Weather Shield Roofing"
                 width={180}

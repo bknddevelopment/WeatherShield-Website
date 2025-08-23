@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import StaticImage from './StaticImage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
@@ -135,12 +136,11 @@ export default function Header() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image
+                <StaticImage
                   src="/images/logo/weather_shield_roofing_transparent.png"
                   alt="Weather Shield Roofing"
                   width={200}
                   height={70}
-                  priority
                   className="h-16 sm:h-[70px] w-auto"
                 />
               </motion.div>
