@@ -31,7 +31,20 @@ jobs:
         run: npm ci
         
       - name: Build Next.js site
-        run: npm run build
+        run: |
+          npm run build
+          # Create out directory and copy static files
+          mkdir -p out
+          # Copy all HTML and related files from .next/server/app
+          cp -r .next/server/app/* out/
+          # Copy static assets
+          mkdir -p out/_next
+          cp -r .next/static out/_next/
+          # Copy public files
+          cp -r public/* out/ 2>/dev/null || true
+          # List contents to verify
+          echo "Contents of out directory:"
+          ls -la out/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
