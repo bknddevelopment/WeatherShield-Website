@@ -61,6 +61,10 @@ jobs:
           find out -name "*.html" -exec sed -i 's|href="/|href="/WeatherShield-Website/|g' {} \;
           find out -name "*.html" -exec sed -i 's|href="/WeatherShield-Website/WeatherShield-Website|href="/WeatherShield-Website|g' {} \;
           
+          # Fix image URLs in the _next/image optimization API calls
+          find out -name "*.html" -exec sed -i 's|/_next/image?url=%2F|/WeatherShield-Website/_next/image?url=%2FWeatherShield-Website%2F|g' {} \;
+          find out -name "*.html" -exec sed -i 's|srcSet="/_next/image|srcSet="/WeatherShield-Website/_next/image|g' {} \;
+          
           # Debug: List contents
           echo "Contents of out directory:"
           ls -la out/
