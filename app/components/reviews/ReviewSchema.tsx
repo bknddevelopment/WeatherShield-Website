@@ -194,7 +194,7 @@ export default function ReviewSchema({
       }
     ],
     "award": [
-      "GAF Master Elite Contractor",
+      "GAF Certified Contractor",
       "BBB A+ Rating",
       "Best of Myrtle Beach 2023"
     ]

@@ -29,7 +29,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   title = "Elite Roofing Protection for Your Greatest Investment",
-  subtitle = "GAF Master Elite® Contractor - Top 2% Nationwide",
+  subtitle = "GAF Certified Contractor - Top Quality Roofing",
   backgroundImage = "/images/hero-roof.jpg",
   backgroundVideo = "/videos/roofing-hero.mp4",
   showEmergencyCTA = true
@@ -107,7 +107,7 @@ export default function HeroSection({
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* GAF Master Elite Badge - Prominent Positioning */}
+            {/* GAF Certified Badge - Prominent Positioning */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -122,8 +122,8 @@ export default function HeroSection({
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-weather-navy uppercase tracking-wider">GAF Certified</p>
-                    <p className="text-lg font-display font-bold text-weather-navy-dark">Master Elite® Contractor</p>
-                    <p className="text-xs text-weather-dark">Top 2% of Roofing Contractors Nationwide</p>
+                    <p className="text-lg font-display font-bold text-weather-navy-dark">Certified Contractor</p>
+                    <p className="text-xs text-weather-dark">Professional Roofing Excellence</p>
                   </div>
                 </div>
               </div>
@@ -278,7 +278,7 @@ export default function HeroSection({
                   <Award className="w-12 h-12 text-white" />
                 </motion.div>
                 <h3 className="text-2xl font-display font-bold text-weather-navy mb-2">
-                  GAF Master Elite®
+                  GAF Certified
                 </h3>
                 <p className="text-weather-dark mb-4">
                   Exclusive contractor status - Only 2% qualify nationwide

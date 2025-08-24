@@ -104,7 +104,7 @@ export default function Header() {
               <span className="hidden sm:inline opacity-50">|</span>
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4 text-weather-amber" />
-                <span className="font-semibold">GAF Master Elite® Contractor</span>
+                <span className="font-semibold">GAF Certified Contractor</span>
               </div>
             </div>
             <motion.div 

@@ -30,8 +30,8 @@ const certifications = [
     yearEst: '2010'
   },
   {
-    name: 'GAF Master Elite',
-    rating: 'Top 2%',
+    name: 'GAF Certified',
+    rating: 'Certified',
     icon: <BadgeCheck className="w-8 h-8" />,
     description: 'Nationwide Certification',
     verified: true,
@@ -54,7 +54,7 @@ const certifications = [
 ];
 
 const manufacturers = [
-  { name: 'GAF', certification: 'Master Elite® Contractor', premium: true },
+  { name: 'GAF', certification: 'Certified Contractor', premium: true },
   { name: 'Owens Corning', certification: 'Platinum Preferred' },
   { name: 'CertainTeed', certification: 'SELECT ShingleMaster™' },
   { name: 'TAMKO', certification: 'Pro Certified Contractor' }
